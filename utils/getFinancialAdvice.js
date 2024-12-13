@@ -1,15 +1,28 @@
 // utils/getFinancialAdvice.js
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+// Access the API key securely from environment variables
+const apiKey = process.env.NEXT_PUBLIC_GEMENI_KEY;
 
-const genAI = new GoogleGenerativeAI("AIzaSyDNUYkYoFmcd7SpAaeJbt1TQGBWN3WHX8g");
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+if (!apiKey) {
+  console.error("Error: GEMINI_KEY is not defined in the environment variables.");
+  throw new Error("API key is missing. Check your .env.local configuration.");
+}
 
-// Function to fetch user-specific data (mocked for this example)
+// Initialize the Generative AI client
+const genAI = new GoogleGenerativeAI(apiKey);
+
+// Load the model once
+let model;
+try {
+  model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+} catch (error) {
+  console.error("Error initializing generative model:", error);
+  throw new Error("Failed to initialize the generative AI model.");
+}
 
 // Function to generate personalized financial advice
 const getFinancialAdvice = async (totalBudget, totalIncome, totalSpend) => {
-  console.log(totalBudget, totalIncome, totalSpend);
   try {
     const userPrompt = `
       Based on the following financial data:
@@ -23,7 +36,7 @@ const getFinancialAdvice = async (totalBudget, totalIncome, totalSpend) => {
     const result = await model.generateContent(userPrompt);
     const advice = result.response.text();
 
-    console.log(advice);
+    console.log("Financial advice generated:", advice);
     return advice;
   } catch (error) {
     console.error("Error fetching financial advice:", error);
