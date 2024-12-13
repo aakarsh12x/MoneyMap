@@ -11,12 +11,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
-
-  if (!publishableKey) {
-    console.error("Clerk publishable key is missing. Please check your .env.local file.");
-    throw new Error("Clerk publishable key is required.");
-  }
+  const publishableKey = "pk_test_ZGFzaGluZy15YWstODUuY2xlcmsuYWNjb3VudHMuZGV2JA";
 
   return (
     <ClerkProvider publishableKey={publishableKey}>
