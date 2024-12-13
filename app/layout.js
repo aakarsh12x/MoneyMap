@@ -11,10 +11,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+  if (!publishableKey) {
+    console.error("Clerk publishable key is missing. Please check your .env.local file.");
+    throw new Error("Clerk publishable key is required.");
+  }
+
   return (
-    <ClerkProvider
-      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-    >
+    <ClerkProvider publishableKey={publishableKey}>
       <html lang="en">
         <body className={outfit.className}>
           <Toaster />
