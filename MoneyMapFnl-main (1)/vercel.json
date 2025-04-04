@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "https://npccwewfvqnskpjtsssg.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wY2N3ZXdmdnFuc2twanRzc3NnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM3NjQ3NTAsImV4cCI6MjA1OTM0MDc1MH0.lb-3JUjXd2zq4Ru-uIyB7DblkQFNuFN-iTlC4N4RIOw",
+    "CLERK_SECRET_KEY": "sk_test_HcEPpnJjWGbwsMqev2sJ1X1h7h2z6HuRJIj8FqWWYf",
+    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "pk_test_ZGFzaGluZy15YWstODUuY2xlcmsuYWNjb3VudHMuZGV2JA",
+    "NEXT_PUBLIC_CLERK_SIGN_IN_URL": "/sign-in",
+    "NEXT_PUBLIC_CLERK_SIGN_UP_URL": "/sign-up",
+    "NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL": "/dashboard/budgets",
+    "NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL": "/dashboard/budgets",
+    "CLERK_ENCRYPTION_KEY": "b986d880c6af6fd7899b1f23f08cc4668e4fc5822a032b3b9359d8cc84758854"
+  }
+} 
