@@ -3,8 +3,7 @@ export default {
   schema: "./utils/schema.jsx",
   out: "./drizzle",
   dbCredentials: {
-    url: process.env.POSTGRES_URI,
-    connectionString:
-      process.env.POSTGRES_URI,
+    url: process.env.NEXT_PUBLIC_DATABASE_URL2,
+    connectionString: process.env.NEXT_PUBLIC_DATABASE_URL2,
   },
 };
