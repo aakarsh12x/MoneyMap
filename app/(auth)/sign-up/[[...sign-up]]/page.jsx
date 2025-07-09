@@ -24,14 +24,28 @@ export default function Page() {
         </section>
 
         {/* Right Side - Sign Up Form */}
-        <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
-          <div className="max-w-xl lg:max-w-3xl w-full">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Create your account</h2>
-                <p className="text-gray-600">Start your journey to smarter finances</p>
+        <main className="flex min-h-screen items-center justify-center px-4 py-8 sm:px-8 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6 bg-transparent">
+          <div className="w-full max-w-md mx-auto">
+            <div className="backdrop-blur-lg bg-white/70 border border-gray-200 rounded-3xl shadow-2xl p-10 flex flex-col items-center justify-center gap-6" style={{boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'}}>
+              <div className="text-center mb-2">
+                <h2 className="text-3xl font-extrabold text-gray-900 mb-1 tracking-tight">Create your MoneyMap account</h2>
+                <p className="text-gray-600 text-base">Start your journey to smarter finances</p>
               </div>
-              <SignUp fallbackRedirectUrl="/dashboard" />
+              <SignUp fallbackRedirectUrl="/dashboard" appearance={{
+                elements: {
+                  formButtonPrimary: "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300",
+                  card: "shadow-none bg-transparent",
+                  headerTitle: "hidden",
+                  headerSubtitle: "hidden",
+                  socialButtonsBlockButton: "bg-white border border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-all duration-300",
+                  dividerLine: "bg-gray-200",
+                  dividerText: "text-gray-500",
+                  formFieldInput: "border border-gray-300 focus:border-blue-600 focus:ring-blue-600 rounded-xl",
+                  formFieldLabel: "text-gray-700 font-medium",
+                  footerActionLink: "text-blue-600 hover:text-blue-700 font-medium",
+                  footerActionText: "text-gray-600"
+                }
+              }} />
             </div>
           </div>
         </main>

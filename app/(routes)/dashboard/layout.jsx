@@ -23,15 +23,15 @@ function DashboardLayout({ children }) {
 
   const checkUserBudgets = async () => {
     try {
-      const result = await db
-        .select()
-        .from(Budgets)
-        .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress));
+    const result = await db
+      .select()
+      .from(Budgets)
+      .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress));
       
-      console.log(result);
-      if (result?.length == 0) {
-        router.replace("/dashboard/budgets");
-      }
+    console.log(result);
+    if (result?.length == 0) {
+      router.replace("/dashboard/budgets");
+    }
     } catch (error) {
       console.error("Error checking user budgets:", error);
     } finally {
@@ -58,7 +58,7 @@ function DashboardLayout({ children }) {
       {/* Sidebar */}
       <div className="fixed md:w-64 hidden md:block h-full z-20">
         <div className="h-full bg-white/80 backdrop-blur-sm border-r border-gray-200/50">
-          <SideNav />
+        <SideNav />
         </div>
       </div>
       
@@ -66,12 +66,12 @@ function DashboardLayout({ children }) {
       <div className="md:ml-64">
         {/* Header */}
         <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-200/50">
-          <DashboardHeader />
+        <DashboardHeader />
         </div>
         
         {/* Page Content */}
         <div className="relative">
-          {children}
+        {children}
         </div>
       </div>
     </div>

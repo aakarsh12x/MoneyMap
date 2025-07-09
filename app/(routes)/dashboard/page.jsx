@@ -321,7 +321,7 @@ function Dashboard() {
             <p className="text-sm text-gray-600">Personalized financial advice and analysis</p>
           </div>
           <div className="p-6">
-            <CardInfo budgetList={budgetList} incomeList={incomeList} />
+      <CardInfo budgetList={budgetList} incomeList={incomeList} />
           </div>
         </div>
 
@@ -551,7 +551,7 @@ function Dashboard() {
                 <p className="text-sm text-gray-600">Monthly budget vs expenses</p>
               </div>
               <div className="p-6">
-                <BarChartDashboard budgetList={budgetList} />
+          <BarChartDashboard budgetList={budgetList} />
               </div>
             </div>
 
@@ -562,11 +562,11 @@ function Dashboard() {
                 <p className="text-sm text-gray-600">Your latest transactions</p>
               </div>
               <div className="p-6">
-                <ExpenseListTable
-                  expensesList={expensesList}
-                  refreshData={() => getBudgetList()}
-                />
-              </div>
+          <ExpenseListTable
+            expensesList={expensesList}
+            refreshData={() => getBudgetList()}
+          />
+        </div>
             </div>
           </div>
           

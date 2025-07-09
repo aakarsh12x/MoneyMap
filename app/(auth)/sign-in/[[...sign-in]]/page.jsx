@@ -27,36 +27,19 @@ export default function Page() {
           </div>
         </section>
 
-        <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
-          <div className="max-w-xl lg:max-w-3xl w-full">
-            <div className="relative -mt-16 block lg:hidden">
-              <div className="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 shadow-lg sm:size-20">
-                <svg className="h-8 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                </svg>
+        <main className="flex min-h-screen items-center justify-center px-4 py-8 sm:px-8 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6 bg-transparent">
+          <div className="w-full max-w-md mx-auto">
+            <div className="backdrop-blur-lg bg-white/70 border border-gray-200 rounded-3xl shadow-2xl p-10 flex flex-col items-center justify-center gap-6" style={{boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'}}>
+              <div className="text-center mb-2">
+                <h2 className="text-3xl font-extrabold text-gray-900 mb-1 tracking-tight">Sign in to MoneyMap</h2>
+                <p className="text-gray-600 text-base">Access your personalized financial dashboard</p>
               </div>
-
-              <h1 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-                Welcome to MoneyMap 🚀
-              </h1>
-
-              <p className="mt-4 leading-relaxed text-gray-600">
-                Your AI-powered personal finance advisor. Track expenses, manage budgets, and grow your wealth with intelligent insights.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Sign in to your account</h2>
-                <p className="text-gray-600">Access your personalized financial dashboard</p>
-              </div>
-              
               <SignIn 
                 forceRedirectUrl="/dashboard"
                 appearance={{
                   elements: {
                     formButtonPrimary: "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300",
-                    card: "shadow-none",
+                    card: "shadow-none bg-transparent",
                     headerTitle: "hidden",
                     headerSubtitle: "hidden",
                     socialButtonsBlockButton: "bg-white border border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-all duration-300",

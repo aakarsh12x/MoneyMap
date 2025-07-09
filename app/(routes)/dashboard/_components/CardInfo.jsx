@@ -68,7 +68,7 @@ function CardInfo({ budgetList, incomeList }) {
             <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
               <Sparkles className="w-6 h-6 text-white" />
             </div>
-            <div>
+              <div>
               <h3 className="text-lg font-semibold text-gray-900">MoneyMap™ AI</h3>
               <p className="text-sm text-gray-600">Your personal financial advisor</p>
             </div>
